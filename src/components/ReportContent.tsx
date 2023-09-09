@@ -49,10 +49,10 @@ const ReportContent: React.FC<ReportContentProps> = ({
       width: 800,
       height: 1132,
     }}>
-      <h2>Cumhurbaşkanlığı Oy Sayım Çetelesi 2023</h2>
+      <h2>2023 Liberia Presidential Election Vote Tally</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 5, marginBottom: 10 }}>
-        {reportConfig.schoolName && <span><strong>Okul İsmi:</strong> {reportConfig.schoolName}</span>}
-        {reportConfig.boxNo && <span><strong>Sandık No:</strong> {reportConfig.boxNo}</span>}
+        {reportConfig.schoolName && <span><strong>Polling Center Name:</strong> {reportConfig.schoolName}</span>}
+        {reportConfig.boxNo && <span><strong>Observer Number:</strong> {reportConfig.boxNo}</span>}
       </div>
       <div>
         <Grid container spacing={3}>
@@ -95,7 +95,7 @@ const ReportContent: React.FC<ReportContentProps> = ({
               <Typography variant="h6" style={{
                 fontWeight: 700,
               }}>
-                TOPLAM OY
+                TOTAL VOTES
               </Typography>
               <Typography style={{
                 fontSize: 48,
@@ -114,7 +114,7 @@ const ReportContent: React.FC<ReportContentProps> = ({
               <Typography variant="h6" style={{
                 fontWeight: 700,
               }}>
-                GEÇERLİ OY
+                VALID VOTES
               </Typography>
               <Typography style={{
                 fontSize: 48,
@@ -133,7 +133,7 @@ const ReportContent: React.FC<ReportContentProps> = ({
               <Typography variant="h6" style={{
                 fontWeight: 700,
               }}>
-                GEÇERSİZ OY
+                INVALID VOTES
               </Typography>
               <Typography style={{
                 fontSize: 48,
@@ -159,7 +159,7 @@ const ReportContent: React.FC<ReportContentProps> = ({
             <Typography variant="h6" style={{
               fontWeight: 700,
             }}>
-              TÜM OYLAR
+              TOTAL VOTES
             </Typography>
             <center>
               <PieChart data={totalVotesData} />
@@ -169,7 +169,7 @@ const ReportContent: React.FC<ReportContentProps> = ({
             <Typography variant="h6" style={{
               fontWeight: 700,
             }}>
-              GEÇERLİ OYLAR
+              VALID VOTES
             </Typography>
             <center>
               <PieChart data={validVotesData} />
@@ -179,10 +179,10 @@ const ReportContent: React.FC<ReportContentProps> = ({
       </div>
 
       <div style={{ marginTop: 40, marginBottom: 40, textAlign: 'left' }}>
-        Resmi bir belge değildir ve girdiler kayıt altına alınmamaktadır. Parti bağımsız, tüm müşahitlerin oy sayımı sırasında hızlı bir şekilde kontrol yapabilmelerini kolaylaştırmak amacıyla açık kaynak olarak geliştirilmiştir.
+      "It is not an official document, and inputs are not recorded. It has been developed as open-source to facilitate quick verification by all observers during the vote counting process, regardless of party affiliation."
         <br />
         <br />
-        <span style={{ fontWeight: 600 }}>https://oysayim.netlify.app | https://oysayim.vercel.app</span>
+        <span style={{ fontWeight: 600 }}>https://omomakay.com | https://omomakay.com</span>
       </div>
 
     </div>

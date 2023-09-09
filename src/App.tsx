@@ -19,7 +19,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-import ErdoganImage from './assets/images/Erdogan.png';
+import EroganImage from './assets/images/Erogan.png';
 import KilicdarogluImage from './assets/images/Kilicdaroglu.png';
 import {
   Candidate,
@@ -31,7 +31,9 @@ import ReportContent, { generateReport } from './components/ReportContent';
 const ACTION_DELAY = 300;
 
 const candidateData: Candidate[] = [
-  { name: "RECEP TAYYİP ERDOĞAN", image: ErdoganImage, votes: 0 },
+  { name: "RECEP TAYYİP ERDOĞAN", image: EroganImage, votes: 0 }, // Candidate name and image
+  { name: "KEMAL KILIÇDAROĞLU", image: KilicdarogluImage, votes: 0 },
+  { name: "RECEP TAYYİP ERDOĞAN", image: EroganImage, votes: 0 },
   { name: "KEMAL KILIÇDAROĞLU", image: KilicdarogluImage, votes: 0 },
 ];
 
