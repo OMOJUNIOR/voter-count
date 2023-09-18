@@ -23,10 +23,10 @@ const ReportContent: React.FC<ReportContentProps> = ({
 
   // First chart: candidate votes and invalid votes according to total votes
   const totalVotesData = {
-    labels: [...candidates.map(candidate => candidate.name), 'GEÇERSİZ OY'],
+    labels: [...candidates.map(candidate => candidate.name), 'INVALID VOTES'],
     datasets: [{
       data: [...candidates.map(candidate => candidate.votes), invalidVotes],
-      backgroundColor: ['#0A86D8', '#DB2325', '#777777'],
+      backgroundColor: ['#5D9C59','#4477CE', '#777777','#451952', '#FE0000'],
       borderColor: '#fff'
     }],
   };
@@ -36,7 +36,7 @@ const ReportContent: React.FC<ReportContentProps> = ({
     labels: candidates.map(candidate => candidate.name),
     datasets: [{
       data: candidates.map(candidate => candidate.votes),
-      backgroundColor: ['#0A86D8', '#DB2325'],
+      backgroundColor: ['#5D9C59','#4477CE', '#777777','#451952'],
       borderColor: '#fff'
     }],
   };
@@ -51,8 +51,15 @@ const ReportContent: React.FC<ReportContentProps> = ({
     }}>
       <h2>2023 Liberia Presidential Election Vote Tally</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 5, marginBottom: 10 }}>
-        {reportConfig.schoolName && <span><strong>Polling Center Name:</strong> {reportConfig.schoolName}</span>}
-        {reportConfig.boxNo && <span><strong>Observer Number:</strong> {reportConfig.boxNo}</span>}
+        {reportConfig.centerName && <span><strong>Center Name:</strong> {reportConfig.centerName}</span>}
+        {reportConfig.countyName && <span><strong>County Name:</strong> {reportConfig.countyName}</span>}
+        {reportConfig.countyCode && <span><strong>County Code:</strong> {reportConfig.countyCode}</span>}
+        {reportConfig.districtNo && <span><strong>District Number:</strong> {reportConfig.districtNo}</span>}
+        {reportConfig.districtCode && <span><strong>District Code:</strong> {reportConfig.districtCode}</span>}
+        {reportConfig.votingCenterNumber && <span><strong>Voting Center Name:</strong> {reportConfig.votingCenterNumber}</span>}
+        {reportConfig.votingPrecincts && <span><strong>Voting Precints Number:</strong> {reportConfig.votingPrecincts}</span>}
+        {reportConfig.boxNo && <span><strong>Ballot Box Number:</strong> {reportConfig.boxNo}</span>}
+
       </div>
       <div>
         <Grid container spacing={3}>
@@ -201,7 +208,7 @@ export const generateReport = (reportConfig: ReportConfig): Promise<string> => {
           let pdf;
           if (reportConfig.format === 'PNG') {
             const imgData = canvas.toDataURL("image/png");
-            saveAs(imgData, `OyRaporu_${new Date().getTime()}.png`);
+            saveAs(imgData, `tallyReport_${new Date().getTime()}.png`);
             reportContent.style.display = 'none';
             resolve(imgData);
           } else {
@@ -211,7 +218,7 @@ export const generateReport = (reportConfig: ReportConfig): Promise<string> => {
             const pdfWidth = pdf.internal.pageSize.getWidth();
             const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
             pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-            pdf.save(`OyRaporu_${new Date().getTime()}.pdf`);
+            pdf.save(`tallyReport_${new Date().getTime()}.pdf`);
             reportContent.style.display = 'none';
             resolve(imgData);
           }

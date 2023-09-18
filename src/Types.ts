@@ -2,6 +2,7 @@ export interface Candidate {
   name: string;
   image: string;
   votes: number;
+  party: string;
 }
 
 export interface PastVotes {
@@ -13,7 +14,13 @@ export interface PastVotes {
 }
 
 export interface ReportConfig {
-  schoolName: string;
+  centerName: string;
+  countyName: string;
+  countyCode: string;
+  districtNo: string;
+  districtCode: string;
+  votingCenterNumber:string;
+  votingPrecincts: string;
   boxNo: string;
   format: 'PNG' | 'PDF';
 }

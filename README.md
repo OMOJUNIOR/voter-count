@@ -1,4 +1,4 @@
-## Cumhurbaşkanlığı Oy Sayım Çetelesi 2023
+## Liberia Presidential Election Vote Tally 2023
 
 Arkadaşımın geçtiğimiz seçimdeki deneyimine dayanarak, yaşadığı oy sayım sürecini kolaylaştıracak ufak bir geliştirme yaptık birlikte. 
 
