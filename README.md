@@ -1,12 +1,15 @@
-## Liberia Presidential Election Vote Tally 2023
+# Liberian Presidential Election Vote Tally 2023
 
-Arkadaşımın geçtiğimiz seçimdeki deneyimine dayanarak, yaşadığı oy sayım sürecini kolaylaştıracak ufak bir geliştirme yaptık birlikte. 
+**Disclaimer**: This project was originally developed based on the open-source project created by Ebru Kaya for the Turkish Presidential Election in 2023. It has been adapted to cater to the specific requirements of the Liberian electoral process.
 
-Resmi bir belge değildir. Parti bağımsız, tüm müşahitlerin oy sayımı sırasında hızlı bir şekilde kontrol yapabilmelerini kolaylaştırmak amacıyla açık kaynak olarak geliştirilmiştir.
+## About
 
-Daha da iyileştirmek konusunda katkıda bulunabilir, atladığımız detaylar var ise haber verebilir, işe yarayacağını düşündüğünüz kişiler ile paylaşabilirsiniz.
+This open-source project aims to streamline and simplify the vote tallying process during the Liberian Presidential Election of 2023. Drawing from the experiences of our team members and collaborators, we have made adjustments to the original project to ensure it aligns seamlessly with the unique needs of the Liberian electoral system.
 
-- https://oysayim.vercel.app/
-- https://oysayim.netlify.app/
+## Key Features
 
-![Scheme](public/Demo.png)
+- **Adaptation for Liberian Elections**: We have tailored the project to the specific requirements and intricacies of the Liberian electoral process to enhance its functionality and relevance.
+
+- **Party-Agnostic Design**: This tool is designed to be non-partisan, ensuring that all election observers, regardless of their political affiliations, can easily use it to expedite the vote counting process.
+
+- **Open Source**: The project is open-source, allowing anyone to contribute to its development, suggest improvements, or report any overlooked details.
