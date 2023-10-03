@@ -1,10 +1,8 @@
 {
   "name": "oysayim",
   "version": "0.1.1",
-  "engines": {
-    "node": "19.x"
-  },
   "dependencies": {
+    "18": "^0.0.0",
     "@emotion/react": "11.11.0",
     "@emotion/styled": "11.11.0",
     "@mui/icons-material": "5.11.16",
@@ -57,4 +55,5 @@
     "@types/file-saver": "2.0.5",
     "gh-pages": "5.0.0"
   }
+
 }
