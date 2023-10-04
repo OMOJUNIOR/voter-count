@@ -13,3 +13,5 @@ This open-source project aims to streamline and simplify the vote tallying proce
 - **Party-Agnostic Design**: This tool is designed to be non-partisan, ensuring that all election observers, regardless of their political affiliations, can easily use it to expedite the vote counting process.
 
 - **Open Source**: The project is open-source, allowing anyone to contribute to its development, suggest improvements, or report any overlooked details.
+
+![Scheme](public/Demo.png)
