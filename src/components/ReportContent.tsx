@@ -46,8 +46,8 @@ const ReportContent: React.FC<ReportContentProps> = ({
       padding: 10,
       backgroundColor: 'white',
       display: "none",
-      width: 800,
-      height: 1132,
+      width: 1000,
+      height: 1532,
     }}>
       <h2>2023 Liberia Presidential Election Vote Tally</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 5, marginBottom: 10 }}>
@@ -186,10 +186,12 @@ const ReportContent: React.FC<ReportContentProps> = ({
       </div>
 
       <div style={{ marginTop: 40, marginBottom: 40, textAlign: 'left' }}>
-      "It is not an official document, and inputs are not recorded. It has been developed as open-source to facilitate quick verification by all observers during the vote counting process, regardless of party affiliation."
+        <span style={{ fontWeight: 600, color: 'red'}}>This is not an official document, and inputs are not recorded. It has been developed as open-source to facilitate  quick verification by all observers during the vote counting process, regardless of party affiliation</span>
         <br />
         <br />
-        <span style={{ fontWeight: 600 }}>https://omomakay.com | https://omomakay.com</span>
+        <span style={{ fontWeight: 600 }}>
+          <a href="https://libvotetally.com" target="_blank" rel="noreferrer" style={{ color: 'blue' }}>libvotetally.com</a>
+        </span>
       </div>
 
     </div>
