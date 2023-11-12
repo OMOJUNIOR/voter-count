@@ -44,6 +44,7 @@ const candidateData: Candidate[] = [
 const App: FC = () => {
 const [candidates, setCandidates] = useState(candidateData);
 const [invalidVotes, setInvalidVotes] = useState(0);
+const [voteInputs, setVoteInputs] = useState(Array(candidateData.length).fill(0));
 const [openConfirmation, setOpenConfirmation] = useState(false);
 const [actionType, setActionType] = useState<'reset' | 'clear' | null>(null);
   const [pastVotes, setPastVotes] = useState<PastVotes[]>([]);
@@ -90,18 +91,27 @@ const [actionType, setActionType] = useState<'reset' | 'clear' | null>(null);
       }
       }
 
-      const handleVote = (index: number) => {
-      checkActionAvailable();
-
-      if (!actionAvailable) {
-      return null;
-      }
-
-      const newCandidates = [...candidates];
-      newCandidates[index].votes++;
-      setCandidates(newCandidates);
-      localStorage.setItem("votes", JSON.stringify(newCandidates.map(candidate => candidate.votes)));
+      const handleVoteInput = (index: number, newValue: number) => {
+        newValue = Math.max(0, Math.floor(newValue));
+        if (isNaN(newValue)) {
+          newValue = 0;
+        }
+        if (newValue.toString().startsWith("0")) {
+          newValue = parseInt(newValue.toString(), 10);
+        }
+        const newVoteInputs = [...voteInputs];
+        newVoteInputs[index] = newValue;
+        setVoteInputs(newVoteInputs);
+      
+        const newCandidates = candidates.map((candidate, i) => ({
+          ...candidate,
+          votes: i === index ? newValue : candidate.votes,
+        }));
+        setCandidates(newCandidates);
+      
+        localStorage.setItem("votes", JSON.stringify(newCandidates.map(candidate => candidate.votes)))
       };
+      
 
       const handleRemoveVote = (index: number) => {
       checkActionAvailable();
@@ -216,7 +226,7 @@ const [actionType, setActionType] = useState<'reset' | 'clear' | null>(null);
           fontSize: 24,
           textAlign: 'left',
         }}>
-              Liberia Presidential Election Vote Tally 2023
+               Liberia Presidential Runoff Election Vote Tally 2023
             </Typography>
             <Button variant="contained" color="error" onClick={handleResetClick}>
               Reset
@@ -309,17 +319,24 @@ const [actionType, setActionType] = useState<'reset' | 'clear' | null>(null);
                 alignItems: 'center',
                 gap: 5,
               }}>
-                  <Button variant="contained" color="primary" size="large" onClick={()=> handleVote(index)}
+                <input
+                    type="text"
+                    value={voteInputs[index]} 
+                    placeholder='Enter Votes'
+                    onChange={(e) => handleVoteInput(index, parseInt(e.target.value))}
                     style={{
-                    fontWeight: 900,
-                    padding: '8px 10px',
-                    fontSize: 20,
-                    marginBottom: 20,
-                    backgroundColor: '#4caf50',
-                    width: 120,
-                  }}>
-                    Add Vote
-                  </Button>
+                      fontSize: 20,
+                      fontWeight: 700,
+                      padding: '8px 10px',
+                      marginBottom: 20,
+                      
+                      border: '3px solid green',
+                      borderRadius: 5,
+
+                      width: 120,
+                    }}
+                  />
+
                   <Button variant="outlined" color="error" size="small" onClick={()=> handleRemoveVote(index)}
                     style={{
                     padding: '5px',
