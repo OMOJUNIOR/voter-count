@@ -21,8 +21,8 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import GeorgeImage from './assets/images/gerogem.png';
 import JosephImage from './assets/images/josephbk.png';
-import LusineImage from './assets/images/lusinekm.png';
-import AlexanderImage from './assets/images/alexandercm.png';
+//import LusineImage from './assets/images/lusinekm.png';
+//import AlexanderImage from './assets/images/alexandercm.png';
 import {
 Candidate,
 PastVotes,
@@ -35,10 +35,10 @@ const ACTION_DELAY = 300;
 const candidateColors = "grey";
 
 const candidateData: Candidate[] = [
-{ name: "JOSEPH Y BOAKAI", image: JosephImage, votes: 0, party:"#2" },
-{ name: "ALEXANDER CUMMINGS", image: AlexanderImage, votes: 0, party: "#4" },
-{ name: "LUSINE F KAMARA", image: LusineImage, votes: 0, party: "#7" },
-{ name: "GEORGE M WEAH", image: GeorgeImage, votes: 0, party: "#18" }, // Candidate name and image
+{ name: "JOSEPH Y BOAKAI", image: JosephImage, votes: 0, party:"#1" },
+//{ name: "ALEXANDER CUMMINGS", image: AlexanderImage, votes: 0, party: "#4" },
+//{ name: "LUSINE F KAMARA", image: LusineImage, votes: 0, party: "#7" },
+{ name: "GEORGE M WEAH", image: GeorgeImage, votes: 0, party: "#2" }, // Candidate name and image
 ];
 
 const App: FC = () => {

@@ -26,10 +26,23 @@ const ReportContent: React.FC<ReportContentProps> = ({
     labels: [...candidates.map(candidate => candidate.name), 'INVALID VOTES'],
     datasets: [{
       data: [...candidates.map(candidate => candidate.votes), invalidVotes],
-      backgroundColor: ['#5D9C59','#4477CE', '#777777','#451952', '#FE0000'],
+      backgroundColor: ['#5D9C59','#4477CE', '#FE0000'],
       borderColor: '#fff'
     }],
   };
+
+  // First chart: candidate votes and invalid votes according to total votes
+  //first round vote tally chart color
+ 
+ /* const totalVotesData = {
+    labels: [...candidates.map(candidate => candidate.name), 'INVALID VOTES'],
+    datasets: [{
+      data: [...candidates.map(candidate => candidate.votes), invalidVotes],
+      backgroundColor: ['#5D9C59','#4477CE','#777777','#451952', '#FE0000'],
+      borderColor: '#fff'
+    }],
+  };
+  */
 
   // Second chart: candidate votes according to valid votes
   const validVotesData = {
